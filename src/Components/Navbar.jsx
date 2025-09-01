@@ -1,72 +1,35 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { ReactComponent as Logo } from "../assests/icons_FEtask/down.svg"; // Import your SVG
 
-function Navbar({ onGroupChange, onSortChange }) {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+import { Dropdown } from "primereact/dropdown";
+function Navbar({ users,ticket}) {
+ const [type,setType]=useState(null);
+  const status=[...new Set(ticket.map(item=>item.status))];
+  
+  const priority=[...new Set(ticket.map(item=>item.priority))];
+  const userAvailability=[...new Set(users.map(item=>item.available))];
+ 
+  const optionstype=[...status,...priority,...userAvailability];
+ 
+  return (
+    <nav className="navbar-settings">
+      <div className="navbar-menu">
+        <Dropdown
+          options={optionstype}
+         
+          
+          optionLabel="name"
+          placeholder="Select a City"
+          className="w-full md:w-14rem"
+       
+        />
 
-    return (
-        <nav className="navbar">
-            <div className="navbar-menu">
-                <button
-                    className="dropdown-button"
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                >
-                    Display
-                    <Logo className="dropdown-icon" /> {/* Use the SVG icon */}
-                </button>
+        <h1>Hero Section</h1>
 
-                {isDropdownOpen && (
-                    <div className="dropdown-menu">
-                        <div className="subdropdown-menu">
-                            <div className="subdropdown-group">
-                                <h3>Grouping</h3>
-                                <div className="group">
-                                    <button
-                                        onClick={() => onGroupChange("status")}
-                                    >
-                                        Status
-                                        <Logo className="dropdown-icon" />
-                                    </button>
-                                    <button
-                                        onClick={() => onGroupChange("user")}
-                                    >
-                                        User
-                                        <Logo className="dropdown-icon" />
-                                    </button>
-                                    <button
-                                        onClick={() =>
-                                            onGroupChange("priority")
-                                        }
-                                    >
-                                        Priority
-                                        <Logo className="dropdown-icon" />
-                                    </button>
-                                </div>
-                            </div>
-                            {/* <div className="subdropdown-sort">
-                                <h3>Sort By</h3>
-                                <div className="sort">
-                                    <button
-                                        onClick={() => onSortChange("priority")}
-                                    >
-                                        Priority
-                                        <Logo className="dropdown-icon" />
-                                    </button>
-                                    <button
-                                        onClick={() => onSortChange("title")}
-                                    >
-                                        Title
-                                        <Logo className="dropdown-icon" />
-                                    </button>
-                                </div>
-                            </div> */}
-                        </div>
-                    </div>
-                )}
-            </div>
-        </nav>
-    );
+      
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

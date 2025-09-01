@@ -1,4 +1,4 @@
-.dropdown-button {
+/* .dropdown-button {
     background-color: whitesmoke;
     color: black;
     padding: 0.5rem 1rem;
@@ -6,13 +6,48 @@
     cursor: pointer;
     border-radius: 5px;
     display: flex;
-    align-items: center; /* Align text and icon */
+    align-items: center; 
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
+} */
+
+.navbar-menu h1{
+  position: absolute;
+  left: 50%;
+  font-size: 35px;
+  overflow: hidden;
+
+  
 }
 
-.dropdown-icon {
-    margin-left: 8px; /* Add space between text and icon */
+.navbar-menu{
+    position: relative;
+   display: flex;
+   flex-direction: row;
+   border: 1px solid black;
+   /* background-color: rgba(245, 245, 220, 0.482); */
+   padding: 5px 5px;
+   height: 80px;
+   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.538);
+   margin:10px;
+   align-items: center;      /* ✅ vertical center */
+  justify-content: flex-start; 
+
+   
+}
+/* .navbar-menu button{
+    display: flex;
+    flex-direction: row;
+
+    padding: 5px;
+    margin: 5px 5px;
+    font-weight: bold;
+    border:none ;
+    
+} */
+
+/* .dropdown-icon {
+    margin-left: 8px;
     width: 16px;
     height: 16px;
 }
@@ -21,21 +56,19 @@
     width: 250px;
     padding: 10px;
 
-    /* background-color: blue; */
+   
 }
 .navbar-menu {
     position: absolute;
     background-color: rgb(246, 243, 243);
 }
-.navbar {
-    padding: 10px;
-}
+
 
 .subdropdown-group {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* gap: 1rem; */
+ 
     width: auto;
     padding: 10px;
 }
@@ -52,10 +85,10 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
-    /* margin: 5px; */
+   
 }
 .sort {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-}
+} */

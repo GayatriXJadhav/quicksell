@@ -1,15 +1,17 @@
 import React from "react";
 import "./Card.css";
 
-function Card({ key, title, description, image }) {
+function Card({ticket}) {
     return (
         <div className="card">
-            {image && <img src={image} alt={title} className="card-image" />}
-            <div className="card-content">
-                <h6>{key}</h6>
-                <h3 className="card-title">{title}</h3>
-                <p className="card-description">{description}</p>
-            </div>
+           
+          
+                <h6>{ticket.title}</h6>
+              
+                <span>{ticket.status}</span>
+                <span>{ticket.priority}</span>
+               
+            
         </div>
     );
 }
